@@ -7,7 +7,7 @@ import joblib
 model = joblib.load("liquidity_model.pkl")
 
 # Title
-st.title("📉 Cryptocurrency Liquidity Predictor")
+st.title("Cryptocurrency Liquidity Predictor")
 
 # Input fields
 volume = st.number_input("24h Volume", min_value=0.0, format="%.4f")
@@ -19,4 +19,8 @@ liquidity_ratio = st.number_input("Liquidity Ratio", min_value=0.0, format="%.4f
 if st.button("Predict Liquidity"):
     features = [[volume, ma_7, volatility, liquidity_ratio]]
     prediction = model.predict(features)
-    st.success(f"💧 Predicted Liquidity: {prediction[0]:.4f}")
+    st.success(f"Predicted Liquidity: {prediction[0]:.4f}")
+import joblib
+import streamlit as st
+
+st.success(" joblib loaded successfully!")
